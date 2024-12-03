@@ -1,0 +1,11 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.layout {
+  width: 411px;
+  height: auto;
+  background-color: rgba(25, 39, 74, 1);
+}

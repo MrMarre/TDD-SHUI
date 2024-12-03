@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.text-content {
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  margin-top: 2rem;
+}
+.text-content {
+  height: 823px;
+}
+
+#textarea {
+  margin-top: 2rem;
+  padding: 1rem;
+  resize: none;
+  width: 379px;
+  height: 464px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 24px;
+  background-color: rgba(255, 255, 255, 1);
+}
+#textarea::placeholder {
+  color: rgba(0, 0, 0, 1);
+}
+
+.usernameButton {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 200px;
+  gap: 1.5rem;
+}
+
+.username {
+  width: 379px;
+  height: 72px;
+  border-radius: 3px;
+  border: white, solid, 1px;
+  padding-left: 0.5rem;
+  font-size: 24px;
+  font-family: 'PT Sans', sans-serif;
+  background-color: rgba(25, 39, 74, 1);
+  color: white;
+}
+.username::placeholder {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.4);
+  padding-left: 0.5rem;
+}
+
+.btn-submit {
+  background-color: rgba(239, 67, 67, 1);
+  width: 379px;
+  height: 72px;
+  border-radius: 3px;
+  font-size: 24px;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+}
