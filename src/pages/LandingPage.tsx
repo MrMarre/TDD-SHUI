@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './styling/landingPage.css';
+import { useNavigate } from 'react-router-dom';
 
 interface messages {
   message: string;
@@ -11,6 +12,13 @@ const LandingPage = () => {
   const [message, setMessage] = useState<string>('');
   const [storage, setStorage] = useState<messages[]>([]);
 
+  useEffect(() => {
+    const storedMessages = localStorage.getItem('JodlPost');
+    if (storedMessages) {
+      setStorage(JSON.parse(storedMessages));
+    }
+  }, []);
+
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -19,12 +27,17 @@ const LandingPage = () => {
       username: username,
       date: new Date().toUTCString(),
     };
-    storage.push(newMessage);
 
-    localStorage.setItem('JodlPost', JSON.stringify(storage));
+    const updatedStorage = [...storage, newMessage];
+    setStorage(updatedStorage);
+
+    localStorage.setItem('JodlPost', JSON.stringify(updatedStorage));
+
     setUsername('');
     setMessage('');
   };
+
+  const handleNavigate = useNavigate();
 
   return (
     <div className="text-content">
@@ -47,7 +60,11 @@ const LandingPage = () => {
             placeholder="Användarnamn"
             required
           />
-          <button type="submit" className="btn-submit">
+          <button
+            onClick={() => handleNavigate('/flow')}
+            type="submit"
+            className="btn-submit"
+          >
             Submit
           </button>
         </div>
