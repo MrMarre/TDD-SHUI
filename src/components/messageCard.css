@@ -7,7 +7,8 @@
 }
 
 .card {
-  width: 80%;
+  height: 11.875rem;
+  width: 23.688rem;
   min-height: 10rem;
   margin-top: 2rem;
   background-color: rgb(255, 255, 255);
@@ -28,6 +29,6 @@
   padding-bottom: 0.5rem;
 }
 
-.username {
+.card-username {
   margin: 0;
 }
