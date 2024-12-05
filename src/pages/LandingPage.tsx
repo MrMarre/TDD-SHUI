@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './styling/landingPage.css';
 import { useNavigate } from 'react-router-dom';
+import { formatDate } from './utils/formatDate';
 
 interface messages {
   message: string;
@@ -25,7 +26,7 @@ const LandingPage = () => {
     const newMessage = {
       message: message,
       username: username,
-      date: new Date().toUTCString(),
+      date: formatDate(),
     };
 
     const updatedStorage = [...storage, newMessage];
