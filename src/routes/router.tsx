@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LandingPage from '../pages/LandingPage';
 import FlowPage from '../pages/FlowPage';
 
@@ -13,4 +13,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-export default router;
+export const AppRoutes = () => {
+  return <RouterProvider router={router} />;
+};

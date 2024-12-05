@@ -12,6 +12,7 @@ const LandingPage = () => {
   const [username, setUsername] = useState<string>('');
   const [message, setMessage] = useState<string>('');
   const [storage, setStorage] = useState<messages[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedMessages = localStorage.getItem('JodlPost');
@@ -37,8 +38,9 @@ const LandingPage = () => {
     setUsername('');
     setMessage('');
   };
-
-  const handleNavigate = useNavigate();
+  const handleNavigate = () => {
+    navigate('/flow');
+  };
 
   return (
     <div className="text-content">
@@ -61,11 +63,7 @@ const LandingPage = () => {
             placeholder="Användarnamn"
             required
           />
-          <button
-            onClick={() => handleNavigate('/flow')}
-            type="submit"
-            className="btn-submit"
-          >
+          <button onClick={handleNavigate} type="submit" className="btn-submit">
             Submit
           </button>
         </div>
